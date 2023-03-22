@@ -55,9 +55,9 @@ Resources:
               OutputArtifacts: 
                 - Name: AppSourceCode
               Configuration: 
-                Owner: !Ref GitHubOwner
-                Repo: !Ref RepositoryName
-                Branch: !Ref BranchName
+                Owner: srikanthbommisetty
+                Repo: cloud-basics4
+                Branch: main
                 OAuthToken: '{{resolve:secretsmanager:github-oauth-token:SecretString}}'               
                 PollForSourceChanges: false
               RunOrder: 1      
