@@ -55,10 +55,10 @@ Resources:
               OutputArtifacts: 
                 - Name: AppSourceCode
               Configuration: 
-                Owner: !Ref GitHubOwner
-                Repo: !Ref RepositoryName
-                Branch: !Ref BranchName
-                OAuthToken: '{{resolve:secretsmanager:github-oauth-token:SecretString}}'               
+                Owner: srikanthbommisetty
+                Repo: cloud-basics4
+                Branch: main
+                OAuthToken: '{{resolve:secretsmanager:github-oauth:SecretString}}'               
                 PollForSourceChanges: false
               RunOrder: 1      
         - Name: Deploy
@@ -84,7 +84,7 @@ Resources:
     Properties:
       Authentication: GITHUB_HMAC
       AuthenticationConfiguration:
-        SecretToken: '{{resolve:secretsmanager:github-oauth-token:SecretString}}'
+        SecretToken: '{{resolve:secretsmanager:github-oauth:SecretString}}'
       Filters:
         - 
           JsonPath: "$.ref"
